@@ -1,13 +1,17 @@
 import os
 
+from dotenv import load_dotenv
+
+load_dotenv()
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'HOST': '',
-        'PORT': '',
-        'NAME': '',
-        'USER': '',
-        'PASSWORD': '',
+        'HOST': os.getenv("SC_DJANGO_HOST"),
+        'PORT': os.getenv("SC_DJANGO_PORT"),
+        'NAME': os.getenv("SC_DJANGO_NAME"),
+        'USER': os.getenv("SC_DJANGO_USER"),
+        'PASSWORD': os.getenv("SC_DJANGO_PASSWORD"),
     }
 }
 
