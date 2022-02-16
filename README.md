@@ -6,8 +6,9 @@ This script uses the Django framework to display data about storage visitors fro
 
 To run the script, type:
 ```
-$ python main.py
+$ python manage.py runserver 0.0.0.0:8000
 ```
+The server will run on [localhost:8000](http://localhost:8000)
 
 ### How to install
 
@@ -16,7 +17,7 @@ Then use `pip` (or `pip3`, if there is a conflict with Python2) to install depen
 ```
 pip install -r requirements.txt
 ```
-Create a file `.env` and put sample database parameters in it:
+Create a file `.env` and put your database parameters in it:
 ```
 SC_DJANGO_HOST=<host>
 SC_DJANGO_PORT=<port>
@@ -24,6 +25,18 @@ SC_DJANGO_NAME=<database_name>
 SC_DJANGO_USER=<database_user>
 SC_DJANGO_PASSWORD=<database_user_password>
 ```
+You can turn debug messages on and off with the `SC_DJANGO_DEBUG` option.  
+
+Debug ON:  
+```
+SC_DJANGO_DEBUG=true
+```  
+Debug OFF:
+```
+SC_DJANGO_DEBUG=false
+```
+or omit this option.
+
 
 ### Project Goals
 
