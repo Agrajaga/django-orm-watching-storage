@@ -6,7 +6,7 @@ This script uses the Django framework to display data about storage visitors fro
 
 To run the script, type:
 ```
-$ python manage.py runserver 0.0.0.0:8000
+python manage.py runserver 0.0.0.0:8000
 ```
 The server will run on [localhost:8000](http://localhost:8000)
 
