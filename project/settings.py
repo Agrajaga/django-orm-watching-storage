@@ -19,7 +19,8 @@ INSTALLED_APPS = ['datacenter']
 
 SECRET_KEY = 'REPLACE_ME'
 
-DEBUG = True
+debug_mode = os.getenv("SC_DJANGO_DEBUG")
+DEBUG = debug_mode.lower() == "true"
 
 ROOT_URLCONF = 'project.urls'
 
