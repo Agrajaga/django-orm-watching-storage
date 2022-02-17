@@ -11,13 +11,13 @@ def passcard_info_view(request: HttpRequest, passcode: str) -> HttpResponse:
     for visit in Visit.objects.filter(passcard=passcard):
         this_passcard_visits.append(
             {
-                'entered_at': localtime(visit.entered_at),
-                'duration': format_duration(visit.get_duration()),
-                'is_strange': visit.is_long()
+                "entered_at": localtime(visit.entered_at),
+                "duration": format_duration(visit.get_duration()),
+                "is_strange": visit.is_long()
             }
         )
     context = {
-        'passcard': passcard,
-        'this_passcard_visits': this_passcard_visits
+        "passcard": passcard,
+        "this_passcard_visits": this_passcard_visits
     }
-    return render(request, 'passcard_info.html', context)
+    return render(request, "passcard_info.html", context)
