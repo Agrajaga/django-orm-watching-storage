@@ -10,7 +10,7 @@ DATABASES = {"default": env.dj_db_url("DATABASE_URL")}
 
 INSTALLED_APPS = ['datacenter']
 
-SECRET_KEY = 'REPLACE_ME'
+SECRET_KEY = env.str("SECRET_KEY")
 
 debug_mode = os.getenv("SC_DJANGO_DEBUG")
 DEBUG = debug_mode.lower() == "true"
