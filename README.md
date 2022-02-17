@@ -17,25 +17,18 @@ Then use `pip` (or `pip3`, if there is a conflict with Python2) to install depen
 ```
 pip install -r requirements.txt
 ```
-Create a file `.env` and put your database parameters in it:
+Create a file `.env` and put your database parameters in it as database url:
 ```
-SC_DJANGO_HOST=<host>
-SC_DJANGO_PORT=<port>
-SC_DJANGO_NAME=<database_name>
-SC_DJANGO_USER=<database_user>
-SC_DJANGO_PASSWORD=<database_user_password>
+DATABASE_URL=postgres://USER:PASSWORD@HOST:PORT/NAME
 ```
-You can turn debug messages on and off with the `SC_DJANGO_DEBUG` option.  
+You can turn debug messages on and off with the `DEBUG` option.  
 
-Debug ON:  
-```
-SC_DJANGO_DEBUG=true
-```  
-Debug OFF:
-```
-SC_DJANGO_DEBUG=false
-```
-or omit this option.
+Debug ON:  `DEBUG=true`  
+Debug OFF: `DEBUG=false` or omit this option.
+
+Also, the `SECRET_KEY` and `ALLOWED_HOSTS` must be set in the environment parameters.   
+`SECRET_KEY='<youre_secret_key>'` - a secret key for a particular Django installation. This is used to provide cryptographic signing, and should be set to a unique, unpredictable value.  
+`ALLOWED_HOSTS=127.0.0.1, localhost` - a list of strings representing the host/domain names that this Django site can serve. 
 
 
 ### Project Goals
